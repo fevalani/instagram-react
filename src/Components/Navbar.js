@@ -1,15 +1,12 @@
 import IonIcon from "./IonIcon";
 
+const iconClasses = ["logo", "logo-mobile", "instagram-mobile", "pesquisa", "icones", "icones-mobile"]
+
 export default function Navbar() {
     return (
         <div class="navbar">
             <div class="container">
-                <IconsTopBar class="logo" />
-                <IconsTopBar class="logo-mobile" />
-                <IconsTopBar class="instagram-mobile" />
-                <IconsTopBar class="pesquisa" />
-                <IconsTopBar class="icones" />
-                <IconsTopBar class="icones-mobile" />
+                {iconClasses.map(value => <IconsTopBar class={value} />)}
             </div>
         </div>
     );

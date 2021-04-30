@@ -1,17 +1,12 @@
 import Sugestoes from "./Sugestoes";
 import Link from "./Link";
 import Copyrigth from "./Copyrigth";
+import User from "./User";
 
 export default function Sidebar() {
     return (
         <div class="sidebar">
-            <div class="usuario">
-                <img src="assets/img/catanacomics.svg" />
-                <div class="texto">
-                <strong>catanacomics</strong>
-                Catana
-                </div>
-            </div>
+            <User />
             <Sugestoes />
             <Link />
             <Copyrigth />
