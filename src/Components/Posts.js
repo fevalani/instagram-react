@@ -1,8 +1,13 @@
 import IonIcon from "./IonIcon";
 
+
+const post = [{profile: "meowed" , postImg: "gato-telefone", likes: "101.523", liker: "respondeai"},
+            {profile: "barked" , postImg: "dog", likes: "99.159", liker: "adorable_animals"}];
+
 export default function Posts() {
     return (
         <div class="posts">
+            {post.forEach()}
             <Post />
             <div class="post">
                 <div class="topo">
@@ -79,15 +84,13 @@ export default function Posts() {
     );
 }
 
-const post = {username: "", profile: "" , profileImg: "", postImg: "", likes: "", likerImg: "", liker: ""}
-
 function Post(props) {
     return (
         <div class="post">
             <div class="topo">
                 <div class="usuario">
-                <img src="assets/img/meowed.svg" />
-                meowed
+                <img src={"assets/img/"+ props.profile +".svg"} />
+                {props.profile}
                 </div>
                 <div class="acoes">
                 <IonIcon name="ellipsis-horizontal" />
@@ -95,25 +98,25 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src="assets/img/gato-telefone.svg" />
+                <img src={"assets/img/"+ props.postImg +".svg"} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                 <div>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="chatbubble-outline"></ion-icon>
-                    <ion-icon name="paper-plane-outline"></ion-icon>
+                    <IonIcon name="heart-outline" />
+                    <IonIcon name="chatbubble-outline" />
+                    <IonIcon name="paper-plane-outline" />
                 </div>
                 <div>
-                    <ion-icon name="bookmark-outline"></ion-icon>
+                    <IonIcon name="bookmark-outline" />
                 </div>
                 </div>
 
                 <div class="curtidas">
-                <img src="assets/img/respondeai.svg" />
+                <img src={"assets/img/"+ props.liker +".svg"} />
                 <div class="texto">
-                    Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
+                    Curtido por <strong>{props.liker}</strong> e <strong>outras {props.likes} pessoas</strong>
                 </div>
                 </div>
             </div>
