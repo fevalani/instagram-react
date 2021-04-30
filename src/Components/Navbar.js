@@ -1,36 +1,61 @@
+import IonIcon from "./IonIcon";
+
 export default function Navbar() {
     return (
         <div class="navbar">
             <div class="container">
-                <div class="logo">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <div class="separador"></div>
-                    <img src="assets/img/logo.png" />
-                </div>
-
-                <div class="logo-mobile">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </div>
-
-                <div class="instagram-mobile">
-                    <img src="assets/img/logo.png" />
-                </div>
-        
-                <div class="pesquisa">
-                    <input type="text" placeholder="Pesquisar" />
-                </div>
-        
-                <div class="icones">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                    <ion-icon name="compass-outline"></ion-icon>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="person-outline"></ion-icon>
-                </div>
-
-                <div class="icones-mobile">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                </div>
+                <IconsTopBar class="logo" />
+                <IconsTopBar class="logo-mobile" />
+                <IconsTopBar class="instagram-mobile" />
+                <IconsTopBar class="pesquisa" />
+                <IconsTopBar class="icones" />
+                <IconsTopBar class="icones-mobile" />
             </div>
         </div>
     );
+}
+
+function IconsTopBar(props) {
+    if(props.class === "logo"){
+        return (
+            <div class={props.class}>
+                <IonIcon name="logo-instagram" />
+                <div class="separador"></div>
+                <img src="assets/img/logo.png" />
+            </div>
+        );
+    } else if(props.class === "logo-mobile"){
+        return (
+            <div class={props.class}>
+                <IonIcon name="logo-instagram" />
+            </div>
+        );
+    } else if(props.class === "instagram-mobile"){
+        return (
+            <div class={props.class}>
+                <img src="assets/img/logo.png" />
+            </div>
+        );
+    } else if(props.class === "pesquisa"){
+        return (
+            <div class={props.class}>
+                <input type="text" placeholder="Pesquisar" />
+            </div>
+        );
+    } else if(props.class === "icones"){
+        return (
+            <div class={props.class}>
+                <IonIcon name="paper-plane-outline" />
+                <IonIcon name="compass-outline" />
+                <IonIcon name="heart-outline" />
+                <IonIcon name="person-outline" />
+            </div>
+        );
+    } else {
+        return (
+            <div class={props.class}>
+                <IonIcon name="paper-plane-outline" />
+            </div>
+        );
+    }
 }

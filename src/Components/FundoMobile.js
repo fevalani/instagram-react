@@ -1,11 +1,11 @@
+import IonIcon from "./IonIcon";
+
+const icons = ["home", "search-outline", "add-circle-outline", "heart-outline", "person-outline"]
+
 export default function Navbar() {
     return (
         <div class="fundo-mobile">
-            <ion-icon name="home"></ion-icon>
-            <ion-icon name="search-outline"></ion-icon>
-            <ion-icon name="add-circle-outline"></ion-icon>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="person-outline"></ion-icon>
+            {icons.map((i) => <IonIcon name={i} />)}
       </div>
     );
 }
