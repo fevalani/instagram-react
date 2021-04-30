@@ -1,3 +1,7 @@
+import Sugestoes from "./Sugestoes";
+import Link from "./Link";
+import Copyrigth from "./Copyrigth";
+
 export default function Sidebar() {
     return (
         <div class="sidebar">
@@ -8,6 +12,9 @@ export default function Sidebar() {
                 Catana
                 </div>
             </div>
+            <Sugestoes />
+            <Link />
+            <Copyrigth />
         </div>
     );
 }

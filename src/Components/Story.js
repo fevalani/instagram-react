@@ -1,9 +1,8 @@
 export default function Story(props) {
-    const img = "assets/img/"+props.usuario+".svg";
     return (
         <div class="story">
             <div class="imagem">
-                <img src={img} />
+                <img src={"assets/img/"+props.usuario+".svg"} />
             </div>
             <div class="usuario">
                 {props.usuario}
